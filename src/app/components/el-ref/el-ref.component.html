@@ -1,0 +1,28 @@
+<div class="mainComp">
+  <h3>ElementRef</h3>
+  <p #elRef>
+    Основная и самая часто используемая абстракция - ElementRef. Она хранит в себе
+    "оригинальный" HTML-элемент в свойстве nativeElement так, если бы он был
+    получен с помощью нативного JavaScript. На этот абзац навешана шаблонная
+    переменная и по кнопке ее содержание, полученное через @ViewChild() выводится
+    в консоль.
+  </p>
+  <button (click)="showElRef()">ShowElRef</button>
+  <br />
+  <p>
+    Кроме того, если в конструктор передать оргумент типа ElementRef, то мы внутри
+    аргумента получим ElementRef на данный компонент
+  </p>
+  <button (click)="showHost()">ShowHost</button>
+  <br />
+  <div #elemWithChildren>
+    <p>
+      Данный блок имеет несколько дочерних блоков и на него навешана шаблонная
+      переменная, которая получена в классе через viewChildren. Такая переменная в
+      классе возвращает QueryList, но с одним лишь элементом
+    </p>
+    <div>Children1</div>
+    <div>Children2</div>
+  </div>
+  <button (click)="showViewChildren()">ShowViewChildren</button>
+</div>

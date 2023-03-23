@@ -1,0 +1,61 @@
+<div class="mainComp">
+  <h3>ViewContainerRef</h3>
+  <p>Это контейнер, в который можно помещать представления (ViewRef)</p>
+  <p>
+    Важно отметить, что вставка представлений происходит не внутрь контейнера, а
+    сразу после него.
+  </p>
+  <p>
+    Для осуществления манипуляций с представлениями внутри контейнера, у
+    экземпляра класса ViewContainerRef предусмотрен ряд методов:
+  </p>
+  <ul>
+    <li>
+      insert(viewRef: ViewRef, index?: number) - вставляет представление viewRef
+      на позицию index (если index не указан, то вставка осуществляется в
+      конец);
+    </li>
+    <li>clear() - удаляет все представления из контейнера;</li>
+    <li>
+      get(index: number) - возвращает представление типа ViewRef по заданному
+      индексу;
+    </li>
+    <li>
+      indexOf(viewRef: ViewRef) - возвращает индекс переданного представления;
+    </li>
+    <li>
+      detach(index?: number) - удаляет представление по конкретному индексу,
+      если индекс не передан - удаляет последнее представление;
+    </li>
+    <li>
+      move(viewRef: ViewRef, currentIndex: number) - меняет индекс представления
+      viewRef на currentIndex.
+    </li>
+  </ul>
+
+  <p>В компоненте реализован соответсвующий пример.</p>
+  <button (click)="embeddedView()">AddEmbView</button>
+
+  <ng-container #views></ng-container>
+
+  <ng-template #tpl>
+    <div>
+      <h1>Template title</h1>
+      <p>Template description</p>
+    </div>
+  </ng-template>
+  <!-- <p>Это всего лишь ссылка на представление</p>
+  <p>В Angular различают два вида представлений:</p>
+  <ul>
+    <li>Embedded Views - относятся к элементу ng-template;</li>
+    <li>
+      Host Views - относятся к компоненту и инициализируются в момент
+      динамического создания компонентов.
+    </li>
+  </ul>
+  <p>Embedded и Host Views размещаются в контейнере ViewContainerRef.</p>
+  <p>
+    Ниже реализовано два способа создани представлений и помещения их в
+    контейнер, который имеет тип ViewContainerRef.
+  </p> -->
+</div>

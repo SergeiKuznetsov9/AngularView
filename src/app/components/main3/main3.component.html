@@ -1,0 +1,44 @@
+<div class="mainComp">
+  <p>
+    В этом компоненте ниже определен тег ng-temlate, внутри которого заключен
+    контент. Данный контент не будет отображаться на эране, если ng-template
+    будет голым. Чтобы использовать то, что помещено во внутрь ng-template, ему
+    нужно задать шаблонную перемнную.
+  </p>
+  <p>
+    Чтобы содержание ng-temlate отрисовалось, необходимо ввести еще один тег
+    ng-container, к которому применить структурную дирррективу ngTemplateOutlet
+    и передать ей шаблонную переменную ng-template:
+  </p>
+
+  <ng-template #templ>
+    <p class="marked">Это контент внутри ng-template</p>
+  </ng-template>
+
+  <ng-container *ngTemplateOutlet="templ"> </ng-container>
+  <hr />
+  <p>
+    В эту диррективу вторым параметром можно передавать context. Этот контекст
+    можно принять в последующем в ng-tepmlate. Ниже отображен ng-tepmlate,
+    имеющий контекст
+  </p>
+  <ng-template #templ2 let-anyVar="name" let-any>
+    <p class="marked">Ниже вывод контекста</p>
+    <p class="marked">{{ anyVar }}</p>
+    <p class="marked">{{ any }}</p>
+  </ng-template>
+
+  <ng-container
+    *ngTemplateOutlet="templ2; context: { name: 'Bill', $implicit: 'Hello' }"
+  >
+  </ng-container>
+  <hr />
+  <p>
+    Следует отметить, что ng-container можно использовать с ngIf. Таким образом
+    мы избавимся от лишнего тега:
+  </p>
+  <ng-container *ngIf="true">
+    <div *ngFor="let item of [1, 2, 3]">{{ item }}</div>
+  </ng-container>
+  <p>Тут нету лишней обертки над ввыведенными компонентами</p>
+</div>

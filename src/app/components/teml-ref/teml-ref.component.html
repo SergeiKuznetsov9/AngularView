@@ -1,0 +1,33 @@
+<div class="mainComp">
+  <h3>TemplateRef</h3>
+  <p>Внутри шаблона компонента можно использовать абстракцию ng-template</p>
+  <p>
+    Ниже имеется абстракция ng-template. На нее навешана шаблонная переменнная,
+    которая получена в классе. По нажатии на кнопку, ее содержимое выводится в
+    консоль. Это будет комментарий, у которого nextSibling будет содержимым
+    ng-template (Если он конечно же отображется, к примеру через ng-container,
+    если нет, то нет ). Суть в том, что тип возвращаемого значения - TemplateRef
+  </p>
+  <p>
+    Также экземпляр класса TemplateRef содержит метод createEmbeddedView(),
+    который позволяет создавать представления и возвращать на них ссылку типа
+    ViewRef. Создаваемое представление конечно же соответствует тому, что в него
+    помещено
+  </p>
+  <p>Созданное представление в последующем можно засунуть в контейнер</p>
+  <p>
+    Следует отметить, что тег ng-container при его переадче в консоль покажет
+    element-ref. Для того, чтобы он получил тип ViewContainerRef, в декоратор
+    ViewChild следует передать вторым аргументом метаданные read:
+    <br />
+    @ViewChild('cnt', read: ViewContainerRef }) cnt!: ViewContainerRef;
+  </p>
+
+  <ng-template #tpl>
+    <section class="ngt">Соержание ng-template</section>
+  </ng-template>
+  <ng-container *ngTemplateOutlet="tpl"></ng-container>
+  <ng-container #cnt></ng-container>
+  <button (click)="showTemplRef()">Show ng-template</button>
+  <button (click)="showCnt()">Show ng-container</button>
+</div>

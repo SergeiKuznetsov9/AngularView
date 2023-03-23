@@ -1,0 +1,8 @@
+<div class="mainComp">
+  Рендерируемый компонент, который в своем шаблоне содержит несколько ng-content.
+  Сейчас, в компоненте родителе использованы атрибуты select тем или иным тегам.
+  В случае использования атрибута select, то что им помечено будет использовано лишь один раз
+  <ng-content select=".footer"></ng-content>
+  <ng-content select=".header"></ng-content>
+  <ng-content></ng-content>
+</div>

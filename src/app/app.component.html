@@ -1,0 +1,57 @@
+<h1>Angular view</h1>
+<h2>Использование ng-content</h2>
+<p>Ниже в родительском компоненте рендерим тег <strong>app-main</strong>:</p>
+<app-main>
+  <h2 class="header">Header</h2>
+  <p class="body">Body</p>
+  <footer class="footer">Footer</footer>
+</app-main>
+<hr />
+<p>
+  Далее реализован пример с рендерингом того, что заключено между тегами
+  дочернего компонента в разные его места:
+</p>
+<app-main2>
+  <h2 class="header">Header</h2>
+  <p class="body">Body</p>
+  <footer class="footer">Footer</footer>
+</app-main2>
+<p>
+  Таким образом ng-content это абстракция, которая используется внутри
+  комопнента для того, чтобы определить где будет находится контент, заключенный
+  между открывающимся и закрывающимся тегом данного компонента
+</p>
+<div class="devider"></div>
+<h2>Использование ng-template и ng-container</h2>
+<app-main3></app-main3>
+<div class="devider"></div>
+
+<h2>Абстракции</h2>
+<p>Существуют следующие абстракции:</p>
+<ul>
+  <li>ElementRef</li>
+  <li>TemplateRef</li>
+  <li>ViewRef</li>
+  <li>ComponentRef</li>
+  <li>ViewContainerRef</li>
+</ul>
+<p>
+  Для получения доступа к абстракциям используются декораторы
+  <strong>@ViewChild()</strong> (возвращает одну ссылку) и
+  <strong>@ViewChildren()</strong> (возвращает массив ссылок).
+</p>
+<app-el-ref></app-el-ref>
+<div class="devider"></div>
+
+<app-teml-ref></app-teml-ref>
+<div class="devider"></div>
+<app-view-ref></app-view-ref>
+<div class="devider"></div>
+<app-view-cont-ref></app-view-cont-ref>
+<div class="devider"></div>
+<app-comp-ref></app-comp-ref>
+<div class="devider"></div>
+<app-out-lets></app-out-lets>
+
+
+
